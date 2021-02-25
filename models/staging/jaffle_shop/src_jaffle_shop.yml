@@ -1,0 +1,23 @@
+version: 2
+
+sources:
+  - name: JAFFLE_SHOP
+    description: Is a clone informacion jaffle shop.
+    database: RAW
+    tables:
+      - name: customers
+        description: Raw customers data.
+        columns:
+          - name: id
+            desciption: Primary key for customers.
+            tests:
+              - unique
+              - not_null
+      - name: orders
+        description: Raw Orders data.
+        columns:
+          - name: id
+            description: Primary key for Orders.
+            tests:
+              - unique
+              - not_null
