@@ -1,0 +1,19 @@
+version: 2
+
+sources:
+  - name: STRIPE
+    description: Is a clone informacion stripe.
+    database: RAW
+    tables:
+      - name: payment
+        description: Raw customers data.
+        loaded_at_field: _batched_at
+        freshness:
+          warn_after: {count: 3,period: day}
+          error_after: {count: 3,period: day}
+        columns:
+          - name: id
+            desciption: Primary key for PAYMENTS.
+            tests:
+              - unique
+              - not_null
