@@ -1,0 +1,29 @@
+version: 2
+
+sources:
+  - name: DA_RAW_HASH
+    description: Is a data raw from csv files
+    database: DA_DEV
+    tables:
+      - name: invoices
+        description: Raw invoices data.
+        columns:
+          - name: id
+            description: Primary key.
+            tests:
+              - unique
+              - not_null  
+      - name: calendar_dates
+        description: Raw calendar dates
+        columns:
+          - name: id
+            description: Primary key.
+            tests:
+              - unique
+              - not_null                
+        columns:
+          - name: calendar_day
+            description: Day 
+            tests:
+              - unique
+              - not_null                

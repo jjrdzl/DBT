@@ -1,0 +1,30 @@
+version: 2
+
+models:
+  - name: fct_history
+    description: Historic data
+    columns:
+      - name: service_id
+        description: Reference key to service
+      - name: period_id
+        description: Reference key to calendar
+      - name: energy
+        description: Value measure energy in these period and service
+      - name: amount
+        description: Value measure amount in these period and service
+
+  - name: dim_calendar
+    description: Calendar dimension.
+    columns:
+      - name: period_id
+        description: Primary key for calendar.
+      - name: period_desc
+        description: description period month.
+      - name: year
+        description: Year when init the period.
+      - name: ini_period
+        description: Date the period starts.
+      - name: end_period
+        description: Date the period ends.
+      - name: days_period
+        description: Number of days in the period.
