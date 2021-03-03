@@ -13,7 +13,7 @@ sources:
             tests:
               - unique
               - not_null  
-      - name: calendar_dates
+      - name: dates
         description: Raw calendar dates
         columns:
           - name: id
