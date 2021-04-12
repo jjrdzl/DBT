@@ -1,8 +1,7 @@
-
 # Name your project! Project names should contain only lowercase characters
 # and underscores. A good package name should reflect your organization's
 # name or the intended use of these models
-name: 'jaffle_shop'
+name: 'my_dev'
 version: '1.0.0'
 config-version: 2
 
@@ -24,7 +23,6 @@ clean-targets:         # directories to be removed by `dbt clean`
     - "target"
     - "dbt_modules"
 
-
 # Configuring models
 # Full documentation: https://docs.getdbt.com/docs/configuring-models
 
@@ -32,9 +30,14 @@ clean-targets:         # directories to be removed by `dbt clean`
 # as tables. These settings can be overridden in the individual model files
 # using the `{{ config(...) }}` macro.
 models:
-    jaffle_shop:
+    my_dev:
         marts:
             core:
-                +materialized: table
-        staging:
-                +materialized: view
+                DA_DW:
+                    +materialized: table
+                    +schema: DA_DW
+        staging:            
+            cfe:
+                DA_WORK:
+                    +materialized: view
+                    +schema: DA_WORK

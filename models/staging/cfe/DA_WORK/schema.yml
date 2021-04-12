@@ -1,0 +1,31 @@
+version: 2
+
+models:
+  - name: stg_invoices
+    description: Staged data invoices 
+    columns:
+      - name: invoice_id
+        description: The invoice primary key
+        tests:
+          - unique
+          - not_null
+    columns:
+      - name: period_id
+        description: Bimonthly code year+month "ini+end"
+        tests:
+          - unique
+          - not_null
+          - relationships:
+              to: ref('stg_calendar')
+              field:  period_id
+  - name: stg_customers
+    columns:
+      - name: customer_id
+        description: Customer primary key
+        tests:
+          - unique
+          - not_null
+
+
+          
+        
