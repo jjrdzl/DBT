@@ -27,3 +27,10 @@ sources:
             tests:
               - unique
               - not_null                
+      - name: customers
+        columns:
+          - name: customer_id
+            description: Customer primary key
+            tests:
+              - unique
+              - not_null

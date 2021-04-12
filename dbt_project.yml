@@ -31,9 +31,13 @@ clean-targets:         # directories to be removed by `dbt clean`
 # using the `{{ config(...) }}` macro.
 models:
     my_dev:
-        DA_DW:
-            +materialized: table
-            +schema: DA_DW
-        DA_WORK:
-            +materialized: view
-            +schema: DA_WORK
+        marts:
+            core:
+                DA_DW:
+                    +materialized: table
+                    +schema: DA_DW
+        staging:            
+            cfe:
+                DA_WORK:
+                    +materialized: view
+                    +schema: DA_WORK

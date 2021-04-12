@@ -18,6 +18,14 @@ models:
           - relationships:
               to: ref('stg_calendar')
               field:  period_id
+  - name: stg_customers
+    columns:
+      - name: customer_id
+        description: Customer primary key
+        tests:
+          - unique
+          - not_null
+
 
           
         
